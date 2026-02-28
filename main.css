@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+/* ---------- LAYOUT ---------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    height: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.hero {
+  background: url("MaskGroup.jpg") center/cover no-repeat;
+  padding: 40px 0 0;
+  min-height: 800px;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-radius: 50px;
+
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.menu a:hover {
+  opacity: 0.7;
+}
+
+.phone {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- HERO CONTENT ---------- */
+
+.hero-content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-card {
+  max-width: 600px;
+  padding: 40px;
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.hero-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.hero-card h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 20px;
+}
+
+.hero-card p {
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.btn {
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #101113;
+  color: #fff;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #101113;
+}
+
+/* ---------- ADVANTAGES ---------- */
+
+.advantages {
+    display: flex;
+    background: #1B1C1E;
+    border-radius: 50px;
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: -50px;
+}
+
+.adv-item {
+    flex: 1;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.adv-item > svg {
+  scale: 0.7;
+}
+
+.adv-item > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 5px;
+}
+
+.adv-item > div > h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.adv-item > div > p {
+  font-size: 16px;
+  font-weight:400;
+}
+
+.adv-item:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+
+.erwerw
+{
+  margin-top: 2000px;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 992px) {
+
+  .menu {
+    gap: 20px;
+  }
+
+  .hero-content {
+    justify-content: center;
+  }
+
+  .hero-card {
+    text-align: center;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+  .nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 30px 0 0 0;
+  }
+
+  .advantages {
+    flex-direction: column;
+    border-radius: 20px;
+    margin-bottom: -105px;
+    height: 210px;
+  }
+
+  .adv-item:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .adv-item {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .adv-item > svg {
+    scale: 0.6;
+    width: 75px;
+  }
+
+  .adv-item > div > h1 {
+    font-size: 16px;
+  }
+
+  .adv-item > div > p {
+    font-size: 12px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
