@@ -57,7 +57,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: auto;
+  height: 65px;
   margin: 0 auto;
 
 
@@ -70,12 +70,12 @@ body {
   top: 0;
   left: 50%;
   z-index: 1;
-  padding: 25px 25px;
+  padding: 15px 25px;
 
 
   
   animation-name: smol;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
 
 }
 
@@ -87,15 +87,17 @@ body {
   opacity: 1;
 
   animation-name: smol_txt;
-  animation-duration: 1.6s;
+  animation-duration: 1s;
 }
 
 .opasity__nav_scroll-menu {
     opacity: 1;
 
   animation-name: smol_txt;
-  animation-duration: 1.6s;
+  animation-duration: 1s;
 }
+
+
 
 @keyframes smol_txt {
   0% {
@@ -111,32 +113,13 @@ body {
 
 @keyframes smol {
   0% {
-    height: 0px;
-    width: 0px;
-    border-radius: 50px;
-    background: #fff;
-
-  }
-  50% {
-    margin-top: 10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    background: #fff;
-  }
-  65% {
-    margin-top: 10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    background: #fff;
+    height: 0;
+    padding: 0px;
   }
   100% {
-    height: auto;
-    padding: 25px 25px;
+    height: 65px;
+    padding: 15px 25px;
     width: 100%;
-    border-radius: 0px;
-    margin-top: 0px;
   }
 }
 
@@ -315,6 +298,19 @@ body {
   .opasity__nav_scroll-menu {
     display: block;
   }
+
+  .nav__scroll {
+  animation-duration: 0.7s;
+}
+
+.opasity__nav_scroll {
+  animation-duration: 0.7s;
+}
+
+.opasity__nav_scroll-menu {
+  animation-duration: 0.7s;
+}
+
 
   .menu {
     flex-direction: column;
