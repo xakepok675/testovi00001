@@ -75,7 +75,7 @@ body {
 
   
   animation-name: smol;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
 
 }
 
@@ -87,14 +87,14 @@ body {
   opacity: 1;
 
   animation-name: smol_txt;
-  animation-duration: 2.1s;
+  animation-duration: 1.6s;
 }
 
 .opasity__nav_scroll-menu {
     opacity: 1;
 
   animation-name: smol_txt;
-  animation-duration: 2.1s;
+  animation-duration: 1.6s;
 }
 
 @keyframes smol_txt {

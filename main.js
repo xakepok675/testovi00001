@@ -32,21 +32,38 @@ const section = document.querySelector('.rpdsss');
 const nextSection = document.querySelector('.hero');
 const nav__scroll = document.querySelector('.nav__scroll'); 
 
+function checkInitialPosition() {
+  const rect = section.getBoundingClientRect();
+
+  // Если секция уже выше экрана — мы ниже неё
+  if (rect.bottom <= 0) {
+    nav__scroll.classList.add('active');
+  }
+}
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
+
     if (entry.isIntersecting) {
       nav__scroll.classList.add('active');
-    } 
-    else {
+    } else {
+      // Убираем только если вышли вверх
       if (entry.boundingClientRect.top > 0) {
         nav__scroll.classList.remove('active');
       }
     }
+
   });
 }, {
-  threshold: 0.8
+  threshold: 0.5,
+  rootMargin: "0px 0px -50% 0px"
 });
+
 observer.observe(section);
+
+// 🔥 ВАЖНО: проверяем сразу
+checkInitialPosition();
+
 
 const nextObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -59,10 +76,3 @@ const nextObserver = new IntersectionObserver((entries) => {
 });
 nextObserver.observe(nextSection);
 
-window.addEventListener('load', () => {
-  const rect = section.getBoundingClientRect();
-  const triggerPoint = window.innerHeight * 0.5;
-  if (rect.top < triggerPoint) {
-    nav__scroll.classList.add('active');
-  }
-});
