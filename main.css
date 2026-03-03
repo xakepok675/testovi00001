@@ -38,11 +38,97 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
   border-radius: 50px;
 
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.05);
+  padding: 15px 30px;
+}
+
+.nav__scroll
+{
+  
+
+  display: flex;
+    display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+
+  border-radius: 0px;
+
+  backdrop-filter: blur(10px);
+  background: rgb(73 71 71 / 25%);
+  position: fixed;
+  transform: translate(-50%, 0%);
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  padding: 25px 25px;
+
+
+  
+  animation-name: smol;
+  animation-duration: 2s;
+
+}
+
+.opasity__nav_scroll {
+  opacity: 1;
+
+  animation-name: smol_txt;
+  animation-duration: 2s;
+}
+
+@keyframes smol_txt {
+  0% {
+  opacity: 0;
+  }
+  80% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+  }
+}
+
+@keyframes smol {
+  0% {
+    height: 0px;
+    width: 0px;
+    border-radius: 50px;
+    background: #fff;
+
+  }
+  25% {
+    margin-top: 10px;
+  }
+  50% {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: #fff;
+  }
+  75% {
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: #fff;
+  }
+  100% {
+    height: auto;
+    padding: 25px 25px;
+    width: 100%;
+    border-radius: 0px;
+    margin-top: 0px;
+  }
 }
 
 .logo {
@@ -212,6 +298,11 @@ body {
 
   .nav {
     flex-direction: column;
+    gap: 15px;
+  }
+  .nav__scroll {
+    flex-direction: column;
+    height: auto;
     gap: 15px;
   }
 
@@ -545,4 +636,10 @@ body {
         justify-content: space-around;
         height: 140px;
     }
+}
+
+
+.active
+{
+  display: flex;
 }
