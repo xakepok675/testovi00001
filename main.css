@@ -79,8 +79,19 @@ body {
 
 }
 
+  .opasity__nav_scroll-menu {
+    display: none;
+  }
+
 .opasity__nav_scroll {
   opacity: 1;
+
+  animation-name: smol_txt;
+  animation-duration: 1.5s;
+}
+
+.opasity__nav_scroll-menu {
+    opacity: 1;
 
   animation-name: smol_txt;
   animation-duration: 1.5s;
@@ -298,10 +309,11 @@ body {
     flex-direction: column;
     gap: 15px;
   }
-  .nav__scroll {
-    flex-direction: column;
-    height: auto;
-    gap: 15px;
+  .opasity__nav_scroll:not(:first-child) {
+    display: none;
+  }
+  .opasity__nav_scroll-menu {
+    display: block;
   }
 
   .menu {
