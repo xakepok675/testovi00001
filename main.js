@@ -33,16 +33,7 @@ const nextSection = document.querySelector('.hero');
 const nav__scroll = document.querySelector('.nav__scroll'); 
 
 
-// Функция для проверки позиции при загрузке / пересчёте
-function checkPosition() {
-  const rect = section.getBoundingClientRect();
-  // Если секция полностью выше экрана — мы ниже неё
-  if (rect.bottom <= 0) {
-    nav__scroll.classList.add('active');
-  }
-}
-
-// IntersectionObserver для нормального срабатывания при прокрутке
+// IntersectionObserver для нормальной прокрутки
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -60,13 +51,20 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(section);
 
-// 🔹 Проверка сразу после рендера
-window.addEventListener('load', () => {
-  setTimeout(checkPosition, 50); // даём Safari стабилизировать viewport
-});
+// 🔹 Проверка позиции при загрузке страницы
+function checkInitialScroll() {
+  const sectionTop = section.offsetTop;
+  const sectionHeight = section.offsetHeight;
+  const scrollPosition = window.scrollY || window.pageYOffset;
 
-// 🔹 Дополнительная страховка: если страница уже проскроллена до нужной позиции
-document.addEventListener('scroll', checkPosition, { passive: true });
+  // Если пользователь уже ниже блока
+  if (scrollPosition >= sectionTop + sectionHeight * 0.5) {
+    nav__scroll.classList.add('active');
+  }
+}
+
+// Запускаем после полной загрузки DOM
+window.addEventListener('DOMContentLoaded', checkInitialScroll);
 
 
 const nextObserver = new IntersectionObserver((entries) => {
